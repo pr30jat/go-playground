@@ -16,6 +16,7 @@ func main() {
 	lo.Must0(godotenv.Load())
 
 	dbDSN := os.Getenv("DB_DSN")
+	fmt.Println(dbDSN)
 
 	db := lo.Must(sql.Open("pgx", dbDSN))
 	defer db.Close()
